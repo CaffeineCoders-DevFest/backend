@@ -3,13 +3,13 @@ CREATE TABLE IF NOT EXISTS Tech(
     techName VARCHAR(30) NOT NULL,
     "password" TEXT NOT NULL,
     locationZip  VARCHAR(5) NOT NULL,
-    FOREIGN KEY (techTypeID) REFERENCES TechType(typeID) NOT NULL,
-    rating INT NULL,
+    techTypeID REFERENCES TechType(typeID) NOT NULL,
+    rating INT,
     contactNumber VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS TechType(
     typeID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     typeName VARCHAR(30) NOT NULL,
-    typeDescription TEXT NULL
+    typeDescription TEXT
 );
